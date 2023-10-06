@@ -13,7 +13,6 @@ const app = express();
 app.use(
   cors({
     origin: "https://snarkle-frontend.vercel.app",
-    credentials: true,
   })
 );
 app.use(bodyParser.json());
