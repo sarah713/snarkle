@@ -26,6 +26,7 @@ function App() {
   const [scores, setScores] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  axios.defaults.withCredentials = true;
   // username generation
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");

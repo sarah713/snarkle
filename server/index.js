@@ -14,6 +14,7 @@ app.use(
   cors({
     origin: "https://snarkle-frontend.vercel.app",
     methods: ["POST", "GET"],
+    credentials: true,
   })
 );
 app.use(bodyParser.json());
