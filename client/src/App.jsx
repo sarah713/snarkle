@@ -125,7 +125,7 @@ function App() {
   const handleFetchScores = async () => {
     try {
       const response = await axios.get(
-        `https://snarkle-server.vercel.app?username=${username}`
+        `https://snarkle-server.vercel.app/getScores?username=${username}`
       );
       const fetchedScores = response.data;
       setScores(fetchedScores);
