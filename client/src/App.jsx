@@ -113,7 +113,7 @@ function App() {
       score: score,
     };
     await axios
-      .post("http://localhost:3001/recordScore", data)
+      .post("https://snarkle-server.vercel.app/recordScore", data)
       .then((response) => {
         console.log(response);
       })
@@ -124,7 +124,7 @@ function App() {
   const handleFetchScores = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/getScores?username=${username}`
+        `https://snarkle-server.vercel.app/?username=${username}`
       );
       const fetchedScores = response.data;
       setScores(fetchedScores);
