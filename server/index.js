@@ -12,9 +12,8 @@ const WordModel = require("./models/Word");
 const app = express();
 app.use(
   cors({
-    origin: ["https://snarkle-frontend.vercel.app"],
+    origin: "https://snarkle-frontend.vercel.app",
     methods: ["POST", "GET"],
-    credentials: true,
   })
 );
 app.use(bodyParser.json());
