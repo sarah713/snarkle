@@ -10,7 +10,13 @@ const WordModel = require("./models/Word");
 // Connect to MongoDB
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://snarkle-frontend.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(bodyParser.json());
 
 mongoose
