@@ -26,22 +26,26 @@ const Modal = () => {
         <h2 className="text-2xl font-semibold font-mono mb-4">
           {username}'s scores
         </h2>
-        <ul>
-          {uniqueScores.map((score) => (
-            <li
-              key={score._id}
-              className="flex justify-between items-center py-2 border-b border-base-100"
-            >
-              <span className="text-white">
-                {" "}
-                {new Date(score.createdAt).toLocaleString().split(",")},{" "}
-              </span>
-              <span className="text-secondary font-semibold">
-                Score : {score.score}
-              </span>
-            </li>
-          ))}
-        </ul>
+        {scores.length === 0 ? (
+          <h2>How bout you play the game first?</h2>
+        ) : (
+          <ul>
+            {uniqueScores.map((score) => (
+              <li
+                key={score._id}
+                className="flex justify-between items-center py-2 border-b border-base-100"
+              >
+                <span className="text-white">
+                  {" "}
+                  {new Date(score.createdAt).toLocaleString().split(",")},{" "}
+                </span>
+                <span className="text-secondary font-semibold">
+                  Score : {score.score}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
